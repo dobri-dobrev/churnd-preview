@@ -7,6 +7,7 @@
   <script src="js/vendor/modernizr.js"></script>
 </head>
 <body>
+<div class="fixed">
 <nav class="top-bar" data-topbar="">
     <ul class="title-area">
       <li class="name">
@@ -17,38 +18,38 @@
     </ul>
     <section class="top-bar-section">
 
-          <!-- Left Nav Section -->
-          <ul class="left">
-            <li class="divider"></li>
-            <li ><a href="/">Dashboard</a></li>
-            <li class="divider"></li>
-            <li class="active"><a href="/account">Contracts</a></li>
-            <li class="divider"></li>
-            <li><a href="/actions">Actions</a></li>
+      <!-- Left Nav Section -->
+      <ul class="left">
+        <li class="divider"></li>
+        <li class="active"><a href="/account">Dashboard</a></li>
+        <li class="divider"></li>
+        <li><a href="/campaign">Campaign</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Actions</a></li>
 
-          </ul>
+      </ul>
 
-          <!-- Right Nav Section -->
-          <ul class="right show-for-large-up">
-            <!-- <li class="has-dropdown not-click"> -->
-            <% if session[:name] != nil %>
-            <li>
-              <a href="/logout">Logout</a>
-    <!--            <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
-                <li><a href="#">Account Details</a></li>
-              </ul> -->
-            </li> 
-            <% else %>
-            <li>
-              <a href="/login">Login</a>
-            </li>
-            <% end %>
-          </ul>
-          <!-- End Navs -->
-        </section>
-      </nav>
+      <!-- Right Nav Section -->
+      <ul class="right show-for-large-up">
+        <!-- <li class="has-dropdown not-click"> -->
+        <% if session[:name] != nil %>
+        <li>
+          <a href="/logout">Logout</a>
+<!--            <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
+            <li><a href="#">Account Details</a></li>
+          </ul> -->
+        </li> 
+        <% else %>
+        <li>
+          <a href="/">Logout</a>
+        </li>
+        <% end %>
+      </ul>
+      <!-- End Navs -->
+    </section>
+  </nav>
+</div>
 
-  
   <div class="row">
       <div class="large-12 columns">
         <div class="panel">
@@ -61,61 +62,61 @@
         </div>
       </div>
     </div>
-
+  
 
   <div class="row">
-  	<div class="large-6 columns">
+    <div class="large-6 columns">
       <fieldset>
-  		<legend> Engagement </legend>
-  		<div id="placeholder" style="width:400px;height:300px"></div>
+      <legend> Retention Rate </legend>
+      <div id="placeholder" style="width:400px;height:300px"></div>
       </fieldset>
-  	</div>
-  	<div class="large-6 columns">
+    </div>
+    <div class="large-6 columns">
       <fieldset>
-  		<legend> User Density </legend>
-  		<div id="retention_chart" style="width:500px;height:350px"> </div>
+      <legend> Risk Profile </legend>
+      <div id="retention_chart" style="width:500px;height:350px"> </div>
     </fieldset>
-  	</div>
+    </div>
   </div>
 
     <br>
   <br>
   <div class="row">
-<div class ="large-12 columns">
+<div class ="large-8 columns">
   <div class="panel radius">
     <table>
   <thead>
     <tr>
-      <th width="200">User</th>
-      <th>Engagement</th>
-      <th width="200">Trend</th>
-      <th width="200">Feature Density</th>
-      <th width="200">Risk</th>
+      <th width="200">Account</th>
+      <th>ACV</th>
+      <th width="150"># of Users</th>
+      <th width="150">Retention Risk</th>
+      <th width="150">Priority</th>
     </tr>
   </thead>
   <tbody>
     <tr>
      
-      <td> <a href="#" data-reveal-id="firstModal"> Teenagers </a></td>
+      <td> <a href="/campaign">InstaApp </a></td>
 
-      <td>220</td>
-      <td>+25%</td>
-      <td>1.2</td>
-      <td>8.5</td>
+      <td>80,000</td>
+      <td>300</td>
+      <td>6%</td>
+      <td>87</td>
     </tr>
     <tr>
-      <td> <a href="#" data-reveal-id="firstModal"> Adults (20-30) </a> </td>
-      <td>130</td>
-      <td>-10%</td>
-      <td>1.4</td>
-      <td>12.7</td>
+      <td> <a href="/campaign"> SnapBird </a></td>
+      <td>125,000</td>
+      <td>530</td>
+      <td>11%</td>
+      <td>95</td>
     </tr>
     <tr>
-      <td> <a href="#" data-reveal-id="firstModal">Parents  </a></td>
-      <td>88</td>
-      <td>-20%</td>
-      <td>.6</td>
-      <td>5.5</td>
+      <td> <a href="/campaign"> TwitSquare </a></td>
+      <td>35,000</td>
+      <td>465</td>
+      <td>28%</td>
+      <td>76</td>
     </tr>
   </tbody>
 </table>
@@ -124,93 +125,17 @@
   </div>
 
 
-
-
-
-  </div>
-
-<!--    <div class="large-3 columns">
-            <a href="#" data-reveal-id="firstModal" class="radius button right">Add a Project</a>
-          </div>
- -->
-
-  <div id="firstModal" class="reveal-modal" data-reveal>
-
-<h2>Update Track Settings</h2>
-<form>
-  <div class="row">
-    <div class="large-12 columns">
-      <label>Campaign Name
-        <input type="text" placeholder="Teenagers">
-      </label>
-    </div>
-  </div>
-  <div class="row">
-    <div class="large-4 columns">
-      <label>Enter User Profile
-        <input type="text" placeholder="Profile Admin">
-      </label>
-    </div>
-    <div class="large-4 columns">
-      <label>Site Address
-        <input type="text" placeholder="www.instasqaure.com">
-      </label>
-    </div>
-    <div class="large-4 columns">
-      <div class="row collapse">
-        <label>Email Address</label>
-        <div class="small-9 columns">
-          <input type="text" placeholder="admin@instasquare">
-        </div>
-        <div class="small-3 columns">
-          <span class="postfix">.com</span>
-        </div>
+<div class="large-4 columns hide-for-small">
+        <h4>Want More?</h4>
+        <hr>
+        <a href="#">
+        <div style="text-align: center" class="panel radius callout">
+          <strong>Add some :)</strong>
+        </div></a> <a href="#">
       </div>
-    </div>
+
+
   </div>
-  <div class="row">
-    <div class="large-12 columns">
-      <label>Select Tracking
-        <select>
-          <option value="husker">Daily</option>
-          <option value="starbuck">Weekly</option>
-          <option value="hotdog">Monthly</option>
-          <option value="apollo">Yearly</option>
-        </select>
-      </label>
-    </div>
-  </div>
-  <div class="row">
-    <div class="large-6 columns">
-      <label>Select Status</label>
-      <input type="radio" id="pokemonRed" value="Red" name="pokemon"><label for="pokemonRed">Active</label>
-      <input type="radio" id="pokemonBlue" value="Blue" name="pokemon"><label for="pokemonBlue">Inactive</label>
-    </div>
-    <div class="large-6 columns">
-      <label>Additional Options</label>
-      <input type="checkbox" id="checkbox1"><label for="checkbox1">Behavioural Analysis</label>
-      <input type="checkbox" id="checkbox2"><label for="checkbox2">Customer Retention Stats</label>
-    </div>
-  </div>
-  <div class="row">
-    <div class="large-12 columns">
-      <label>Notes
-        <textarea placeholder="What's Up?"></textarea>
-      </label>
-    </div>
-  </div>
-
-    <div class="row"> <div class="small-12">  <div class="row">
-  <a href="#" id="project_create_submit_button" class="radius button right">Submit</a>
-  </div>  </div> </div>
-
-
-</form>
-
-
-    <!-- <p><a href="#" data-reveal-id="secondModal" class="secondary button">Second Modal...</a></p> -->
-  <a class="close-reveal-modal">&#215;</a>
-</div>
 
       <!-- Footer -->
   
@@ -239,7 +164,7 @@
   <script src="js/jquery.flot.axislabels.js"></script>
   <script src="js/jquery.flot.pie.js"></script>
   <script src="js/jquery.flot.navigate.min.js"></script>
-  <script src="js/account.js"></script>
+  <script src="js/index.js"></script>
   <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script>
   $(document).foundation();
